@@ -17,13 +17,13 @@ export default function Sidebar({children}) {
           <div className="bg-white w-[230px] h-screen pl-[10px gap-8">
               <ul className=" flex flex-col px-4 gap-3">
                 <h1 className='font-bold text-base'>General</h1>
-                    <Link to='/'><SidebarElements icon = {dashboardImg} buttonName = 'Dashboard'/></Link>  
-                    <Link to='/'><SidebarElements icon = {userImg} buttonName = 'Manage Users' subList={[{item: "Users"}, {item: "Branches"}, {item: "Departments"}]}  /></Link> 
-                    <Link to='/'><SidebarElements icon = {entityImg} buttonName = 'Entity' subList={[{item: "Users"}, {item: "Branches"}, {item: "Departments"}]} /></Link> 
-                    <Link to='/'><SidebarElements icon = {inboundImg} buttonName = 'Inbound Calls' subList={[{item: "Users"}, {item: "Branches"}, {item: "Departments"}]} /></Link> 
-                    <Link to='/'><SidebarElements icon = {outBoundImg} buttonName = 'Outbound Calls' subList={[{item: "Users"}, {item: "Branches"}, {item: "Departments"}]} /></Link> 
-                    <Link to='/'><SidebarElements icon = {reminderImg} buttonName = 'Reminder Calls' subList={[{item: "Users"}, {item: "Branches"}, {item: "Departments"}]} /></Link> 
-                    <Link to='/'><SidebarElements icon = {ticketImg} buttonName = 'Tickets' subList={[{item: "Users"}, {item: "Branches"}, {item: "Departments"}]} /></Link> 
+                    <SidebarElements icon = {dashboardImg} buttonName = 'Dashboard'/>  
+                    <SidebarElements icon = {userImg} buttonName = 'Manage Users' subList={[{item: "Users"}, {item: "Branches"}, {item: "Departments"}]}  />
+                    <SidebarElements icon = {entityImg} buttonName = 'Entity' subList={[{item: "Users"}, {item: "Branches"}, {item: "Departments"}]} /> 
+                    <SidebarElements icon = {inboundImg} buttonName = 'Inbound Calls' subList={[{item: "Users"}, {item: "Branches"}, {item: "Departments"}]} /> 
+                    <SidebarElements icon = {outBoundImg} buttonName = 'Outbound Calls' subList={[{item: "Users"}, {item: "Branches"}, {item: "Departments"}]} /> 
+                    <SidebarElements icon = {reminderImg} buttonName = 'Reminder Calls' subList={[{item: "Users"}, {item: "Branches"}, {item: "Departments"}]} /> 
+                    <SidebarElements icon = {ticketImg} buttonName = 'Tickets' subList={[{item: "Users"}, {item: "Branches"}, {item: "Departments"}]} /> 
               </ul>
           </div>
           <div>
