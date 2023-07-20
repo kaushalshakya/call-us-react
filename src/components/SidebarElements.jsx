@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 
 export default function SidebarElements({icon, buttonName, subList}) {
   const [dropdown, setDropdown] = useState(false);
-  const [list, setList] = useState(false);
+  const [list, setList] = useState(null);
 
-  const handleListClick = () => {
-    setList((value) => !value);
+  const handleListClick = (value) => {
+    setList(value);
   }
 
   const handleDropdownClick = () =>{
@@ -34,19 +34,30 @@ export default function SidebarElements({icon, buttonName, subList}) {
             
           </div>
         </div>
-        <motion.div 
-          initial = 'closed'
-          animate = {dropdown? 'open' : 'closed'}
-          variants={dropdownVariants}
-          transition={{dropdownTransition}}
-          style={{overflow: 'hidden'}}
-        >
-          <ul className= {dropdown ? 'flex flex-col gap-[5px] bg-white pt-1 shadow-lg' : 'hidden'}>
-          {subList && subList.map((el, index) => (
-            <li key={index} className={'ml-[50px] gap-[25px] cursor-pointer'} onClick={handleListClick}>{el.item}</li>
+        {subList &&
+          <motion.div 
+            initial = 'closed'
+            animate = {dropdown? 'open' : 'closed'}
+            variants={dropdownVariants}
+            transition={{dropdownTransition}}
+            style={{overflow: 'hidden'}}
+          >
+           <ul className={dropdown ? 'flex flex-col gap-[5px] bg-white pt-1 shadow-lg' : 'hidden'}>
+        {subList &&
+          subList.map((el, index) => (
+            <li
+              key={index}
+              className={`ml-[50px] gap-[25px] cursor-pointer rounded p-3 truncate hover:text-clip ${
+                el.item === list ? 'bg-orange-300' : ''
+              }`}
+              onClick={() => handleListClick(el.item)}
+            >
+              {el.item}
+            </li>
           ))}
-          </ul>     
-        </motion.div>
+      </ul>   
+          </motion.div>
+        }
       </li>  
     </>
   )

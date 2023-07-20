@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../components/Button';
+import ButtonComponent from '../components/Button';
 import Input from '../components/Input';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ export default function Login() {
         <Input type = 'password' label = 'Password' placeholder = '*********' name = 'password'/>
         </div>
         <div className="flex flex-col items-center justify-between ">
-        <Link to = '/' ><Button type='submit' name = 'Login'/></Link>
+        <Link to = '/' ><ButtonComponent type='submit' name = 'Login'/></Link>
         <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
             Forgot Password?
         </a>

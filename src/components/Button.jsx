@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Button from 'react-bootstrap/Button';
 
-export default function Button({name, type}) {
+export default function ButtonComponent({name, type, link}) {
   return (
-    <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type = {type}>
-        {name}
-    </button>
+    <>
+      <Button variant="outline-primary" type={type}>{name}</Button>
+    </>
   )
 }
